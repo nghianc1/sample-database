@@ -29,7 +29,7 @@ if not st.session_state["authenticated"]:
     col1, col2, col3 = st.columns([1, 2, 1])
     
     with col2:
-        st.info("HỆ THỐNG NỘI BỘ KHÓA THƯƠNG R&D")
+        st.info("HỆ THỐNG NỘI BỘ KHOA THƯƠNG R&D")
         st.subheader("Vui lòng nhập mật khẩu để truy cập dữ liệu:")
         
         # Ô nhập mật khẩu ẩn ký tự
