@@ -1,5 +1,26 @@
+import sys
+import subprocess
+
+# --- BỘ TỰ ĐỘNG KIỂM TRA VÀ CÀI ĐẶT THƯ VIỆN NẰM TRONG APP.PY ---
+required_libraries = {
+    "pandas": "pandas",
+    "openpyxl": "openpyxl",
+    "PIL": "Pillow",
+    "requests": "requests"
+}
+
+for module_name, pip_name in required_libraries.items():
+    try:
+        __import__(module_name)
+    except ImportError:
+        # Nếu thiết bị hoặc đám mây thiếu thư viện, code sẽ tự cài ngay lập tức
+        subprocess.check_call([sys.executable, "-m", "pip", "install", pip_name])
+
+# --- SAU KHI ĐẢM BẢO ĐỦ THƯ VIỆN, TIẾN HÀNH CHẠY ỨNG DỤNG ---
 import streamlit as st
 import pandas as pd
+from PIL import Image
+import os
 
 # 1. Cấu hình giao diện trang web
 st.set_page_config(
