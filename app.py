@@ -205,10 +205,10 @@ try:
             with st.expander("Thống kê nhanh số lượng mẫu đang hiển thị", expanded=True):
                 m_col1, m_col2, m_col3, m_col4, m_col5 = st.columns(5)
                 m_col1.metric("Tổng số mẫu hiển thị", f"{len(df_filtered)} / {len(df_data)}")
-                m_col2.metric("Dương tính", f"{len(df_filtered[df_filtered['_PhanLoaiTmp']=='Dương tính'])}")
-                m_col3.metric("Âm tính", f"{len(df_filtered[df_filtered['_PhanLoaiTmp']=='Âm tính'])}")
-                m_col4.metric("Nghi ngờ", f"{len(df_filtered[df_filtered['_PhanLoaiTmp']=='Nghi ngờ'])}")
-                m_col5.metric("Unknown", f"{len(df_filtered[df_filtered['_PhanLoaiTmp']=='Unknown'])}")
+                m_col2.metric("🟢 Dương tính", f"{len(df_filtered[df_filtered['_PhanLoaiTmp']=='Dương tính'])}")
+                m_col3.metric("⚪ Âm tính", f"{len(df_filtered[df_filtered['_PhanLoaiTmp']=='Âm tính'])}")
+                m_col4.metric("🟡 Nghi ngờ", f"{len(df_filtered[df_filtered['_PhanLoaiTmp']=='Nghi ngờ'])}")
+                m_col5.metric("🔴 Unknown", f"{len(df_filtered[df_filtered['_PhanLoaiTmp']=='Unknown'])}")
 
             df_filtered = df_filtered.drop(columns=['_PhanLoaiTmp'])
 
